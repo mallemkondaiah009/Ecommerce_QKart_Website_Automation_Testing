@@ -17,15 +17,15 @@ if not os.path.exists("screenshots"):
 def init_driver(request):
     if request.param == "chrome":
         from selenium.webdriver.chrome.service import Service as ChromeService
-        driver_path = "Browsers/chromedriver.exe"
+        driver_path = "../HealthCare_Website_Testing/Browsers/chromedriver.exe"
         driver = webdriver.Chrome(service=ChromeService(driver_path))
     elif request.param == "firefox":
         from selenium.webdriver.firefox.service import Service as FirefoxService
-        driver_path = "Browsers/geckodriver.exe"
+        driver_path = "../HealthCare_Website_Testing/Browsers/geckodriver.exe"
         driver = webdriver.Firefox(service=FirefoxService(driver_path))
     elif request.param == "edge":
         from selenium.webdriver.edge.service import Service as EdgeService
-        driver_path = "Browsers/msedgedriver.exe"
+        driver_path = "../HealthCare_Website_Testing/Browsers/msedgedriver.exe"
         driver = webdriver.Edge(service=EdgeService(driver_path))
 
     driver.maximize_window()
